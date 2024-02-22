@@ -30,12 +30,11 @@
         Wait for the player to click "Start level" to play the next level.
 
     This flow seems to handle the gameplay loop, including level progression, question generation,
-      answer processing, and UI updates. You might need to implement functions like get_numbers(), 
+      answer processing, and UI updates. You might need to implement functions like get_numbers(),
       validation_answer(), and the Score class methods to complete the functionality.
     Additionally, consider implementing error handling and user
-      feedback mechanisms for a smoother gaming experience.                   
+      feedback mechanisms for a smoother gaming experience.
    """
-
 
 
 from gui.application import Application
@@ -61,32 +60,32 @@ apps = None
 current_level = 1
 question_counter = 0
 questions = {}
-start_time = None     
-size_text = 12       # The variable tracks the size of the text of combo_number_label.
-enter_pressed = None # Variable that tracks whether the Enter key is pressed
+start_time = None
+size_text = 12 # The variable tracks the size of the text of combo_number_label.
+enter_pressed = None  # Variable that tracks whether the Enter key is pressed
 
 
 def main():
-    global apps 
-    apps= Application(start_level)
+    global apps
+    apps = Application(start_level)
     apps.start_application()
 
 
 def start_level():
     global questions
-    global  start_time
-    questions = generate_quest(current_level) # generat quest 
-    start_time = time.time() # keep start time
+    global start_time
+    questions = generate_quest(current_level)  # generat quest
+    start_time = time.time()  # keep start time
     apps.frame3.level_label.config(text=update_label_text())
     apps.frame3.start_button.config(text="Play")
     apps.frame3.start_button['state'] = 'disabled'
     apps.frame3.answer_entry.configure(state=tk.NORMAL)
-    apps.frame3.quest_frame.grid(row=3, column=0 , columnspan=3, pady=10)
+    apps.frame3.quest_frame.grid(row=3, column=0, columnspan=3, pady=10)
 
     play_one_round()
-    
 
-def  play_one_round(): 
+
+def play_one_round():
     global enter_pressed
     global question_counter
     global questions
@@ -97,16 +96,19 @@ def  play_one_round():
         first_number = numbers[0]
         secund_number = numbers[1]
         question = f"{first_number} * {secund_number} =" # generates a question view
-        apps.frame3.quest_label.config(text=question) # display question
+        apps.frame3.quest_label.config(text=question)  # display question
         apps.frame3.answer_entry.grid(row=0, column=1, sticky="w", padx=10)
-        hint= generate_hint(first_number, secund_number)
-        apps.frame3.help_label.config(text=hint) # display hint 
+        hint = generate_hint(first_number, secund_number)
+        apps.frame3.help_label.config(text=hint)  # display hint
         apps.frame3.answer_entry.focus()
-        apps.frame3.answer_entry.bind('<Return>', process_answer) # when user give answer, and press enter
-        apps.frame3.wait_variable(enter_pressed) 
+        # when user give answer, and press enter
+        apps.frame3.answer_entry.bind('<Return>', process_answer)
+        apps.frame3.wait_variable(enter_pressed)
 
-    apps.frame3.answer_entry.unbind("<Return>") # When user finish the level, disable the 'Press Enter' option.
-    apps.frame3.answer_entry.configure(state=tk.DISABLED) # Disable input from the keyboard.
+    # When user finish the level, disable the 'Press Enter' option.
+    apps.frame3.answer_entry.unbind("<Return>")
+    # Disable input from the keyboard.
+    apps.frame3.answer_entry.configure(state=tk.DISABLED)
     reset_widgets()
 
 
@@ -115,9 +117,10 @@ def reset_widgets():
     global start_time
     global current_level
 
-    elapsed_time = math.ceil(time.time() - start_time) #stop time and subtract from start time
+    # stop time and subtract from start time
+    elapsed_time = math.ceil(time.time() - start_time)
     apps.score.time = elapsed_time  # add time to instance class Score
-    current_level += 1 # increasing the level
+    current_level += 1  # increasing the level
     apps.frame3.quest_frame.grid_forget()
     apps.frame3.level_label.config(text="")
     apps.frame3.start_button.config(text=f"Start level {current_level}")
@@ -131,52 +134,64 @@ def process_answer(event):
     global enter_pressed
     global question_counter
     global size_text
-    print(size_text)
     global questions
     numbers = get_numbers(questions, question_counter)
     first_number = numbers[0]
     secund_number = numbers[1]
 
-    answer = validation_answer(apps, first_number, secund_number) # return True or False
-    apps.score.answer(answer) # Forward the check to the Score class.
-    
-    if answer ==True:    
-        apps.frame3.combo_number_label.config(text=apps.score.combo, font=("Helvetica",  combo_text_resize()))
-        apps.frame3.feedback_result_label.config(text="Correct Answer",  foreground="#CA9A07")
-        apps.frame3.feedback_result_label.after(DELAY_HIDE_MESSAGE,hide_mesage) # After a delay, hide the message for 700 ms.
-    elif answer ==False: 
-        size_text = DEFAULT_TEXT_SIZE 
-        apps.frame3.combo_number_label.config(text=apps.score.combo, font=("Helvetica", DEFAULT_TEXT_SIZE)) 
-        apps.frame3.feedback_result_label.config(text=f"Wrong!  {first_number}  *  {secund_number} = {first_number * secund_number} "
-                                                , foreground="red")
-        apps.frame3.feedback_result_label.after(DELAY_WRONG_MESSAGE,hide_mesage)
-        
+    answer = validation_answer(
+        apps,
+        first_number,
+        secund_number)  # return True or False
+    apps.score.answer(answer)  # Forward the check to the Score class.
+
+    if answer:
+        apps.frame3.combo_number_label.config(
+            text=apps.score.combo, font=(
+                "Helvetica", combo_text_resize()))
+        apps.frame3.feedback_result_label.config(
+            text="Correct Answer", foreground="#CA9A07")
+        # After a delay, hide the message for 700 ms.
+        apps.frame3.feedback_result_label.after(
+            DELAY_HIDE_MESSAGE, hide_mesage)
+    elif answer == False:
+        size_text = DEFAULT_TEXT_SIZE
+        apps.frame3.combo_number_label.config(
+            text=apps.score.combo, font=(
+                "Helvetica", DEFAULT_TEXT_SIZE))
+        apps.frame3.feedback_result_label.config(
+            text=f"Wrong!  {first_number}  *  {secund_number} = {first_number * secund_number} ",
+            foreground="red")
+        apps.frame3.feedback_result_label.after(
+            DELAY_WRONG_MESSAGE, hide_mesage)
+
     apps.frame3.score_number_label.config(text=apps.score.score)
-    apps.frame3.answer_var.set("")  # Clear the entry field for the next question
+    # Clear the entry field for the next question
+    apps.frame3.answer_var.set("")
     question_counter += 1
-    enter_pressed.set(True) # Change the variable when the user presses Enter.
+    enter_pressed.set(True)  # Change the variable when the user presses Enter.
 
 
 # Check the user's answer and return true or false."
 def validation_answer(apps, first_number, secund_number):
 
     try:
-        user_answer = int(apps.frame3.answer_var.get()) # get users answer 
+        user_answer = int(apps.frame3.answer_var.get())  # get users answer
         result = first_number * secund_number
         if result == user_answer:
-            return True    
-        else:  
+            return True
+        else:
             return False
     except ValueError:
         return False
-    
+
 
 def hide_mesage():
     global question_counter
     apps.frame3.feedback_result_label.config(text="")
 
 
-#change size of combo text
+# change size of combo text
 def combo_text_resize():
     global size_text
     size_text += 1
@@ -184,12 +199,11 @@ def combo_text_resize():
 
 
 def get_numbers(questions, question_counter):
-    numbers = questions.get(question_counter) # one pair of numbers
+    numbers = questions.get(question_counter)  # one pair of numbers
     return numbers
 
 
 def generate_quest(current_level):
-
     """
     Generates two lists of 5 numbers for a given level.
     Parameters:
@@ -200,33 +214,35 @@ def generate_quest(current_level):
     first_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     first_numbers = shuffle(first_numbers)
     first_numbers = first_numbers[:5]
-    secund_numbers = get_level_difficulty(apps.difficulty, current_level).get_level
+    secund_numbers = get_level_difficulty(
+        apps.difficulty, current_level).get_level
     secund_numbers = shuffle(secund_numbers)
     secund_numbers = secund_numbers[:5]
-    pairs = {} # create dictionary for store all pair numbers
+    pairs = {}  # create dictionary for store all pair numbers
     for i in range(5):
         pair = [first_numbers[i], secund_numbers[i]]
         pairs[i] = pair
     return pairs
 
 
-# returns string to help_label 
+# returns string to help_label
 def generate_hint(first_number, secund_number):
 
-    if secund_number == 1: # when multiply with 1, then have single number
-        return f"Hint : {first_number}" 
-    else:    
-        reduct_secund_nubmer = secund_number - 1 # when print hint reduce hint becous one "+" is too much
+    if secund_number == 1:  # when multiply with 1, then have single number
+        return f"Hint : {first_number}"
+    else:
+        # when print hint reduce hint becous one "+" is too much
+        reduct_secund_nubmer = secund_number - 1
 
-    help = f"{first_number} + " * reduct_secund_nubmer # multipy hint
-    help =f"Hint : {help}{first_number} = " # add one more number to complite hint
+    help = f"{first_number} + " * reduct_secund_nubmer  # multipy hint
+    # add one more number to complite hint
+    help = f"Hint : {help}{first_number} = "
     return help
-
 
 
 def shuffle(mylist):
     random.shuffle(mylist)
-    return mylist  
+    return mylist
 
 
 def get_level_difficulty(difficulty, level):
@@ -244,8 +260,10 @@ def get_level_difficulty(difficulty, level):
 
 
 def reset_frame2():
-    apps.frame2.difficulty_var.set("")  # Resetovanje vrednosti na prazan string
-    apps.frame2.next_button.config(state='disabled') 
+    # Resetovanje vrednosti na prazan string
+    apps.frame2.difficulty_var.set("")
+    apps.frame2.next_button.config(state='disabled')
+
 
 def update_label_text():
     global size_text
@@ -253,35 +271,37 @@ def update_label_text():
     global questions
     global apps
     global question_counter
-    question_counter = 0 # reset counter
+    question_counter = 0  # reset counter
 
     # Tracks when the game will finish.
     if current_level > 5:
-        if current_level > 6: # If the player finishes the bonus level.
+        if current_level > 6:  # If the player finishes the bonus level.
             reset_frame2()
             apps.show_frame4()
             size_text = DEFAULT_TEXT_SIZE
             current_level = 1
-        else: 
+        else:
             if apps.score.time <= 75:
                 size_text = DEFAULT_TEXT_SIZE
-                apps.style =  Style(theme="united") # Changing theme
+                apps.style = Style(theme="united")  # Changing theme
                 apps.frame3.header_label.config(text="MultiPy Bonus")
-                apps.score.answer(False) # Reset combo in Score class.
-                apps.frame3.combo_number_label.config(text="1",font=("Helvetica", DEFAULT_TEXT_SIZE) ) # Reset combo on display
-                apps.frame3.start_button.config(text=f"Start Bonus level", command=start_level)
+                apps.score.answer(False)  # Reset combo in Score class.
+                apps.frame3.combo_number_label.config(text="1", font=(
+                    "Helvetica", DEFAULT_TEXT_SIZE))  # Reset combo on display
+                apps.frame3.start_button.config(
+                    text=f"Start Bonus level", command=start_level)
                 apps.frame3.start_button['state'] = 'enable'
-                return(f"Level Bonus")  
- 
+                return (f"Level Bonus")
+
         reset_frame2()
         current_level = 1
-        apps.frame4.init_score_instance(score_instance=apps.score) # provide instance score to page 4
+        # provide instance score to page 4
+        apps.frame4.init_score_instance(score_instance=apps.score)
         size_text = DEFAULT_TEXT_SIZE
         apps.show_frame4()
-    else:        
-        return(f"Level {current_level}")  
-    
+    else:
+        return (f"Level {current_level}")
+
 
 if __name__ == "__main__":
     main()
-
