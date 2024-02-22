@@ -1,3 +1,5 @@
+![image](MultiPy.png)
+
 # MultiPy
 #### Video Demo:  <URL HERE>
 #### Description:
@@ -13,6 +15,8 @@ git clone - <https://github.com/mando984/MultiPy.git>
 pip install -r requirements.txt
 
 ### 2. Koriscenje
+
+
 
 
 
