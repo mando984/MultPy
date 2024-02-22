@@ -7,7 +7,9 @@
 
 ### 1. Instalation
 
-git clone -<https://gitkraken.dev/link/Z2l0a3Jha2VuOi8vcmVwb2xpbmsvOTI4NzBlODMyZTVlZmIwZjk5NDVlNGE0YWUwYjBiNjE0ODRiNThhMj91cmw9aHR0cHMlM0ElMkYlMkZnaXRodWIuY29tJTJGbWFuZG85ODQlMkZNdWx0UHkuZ2l0?origin=gitkraken>
+git clone - <https://github.com/mando984/MultiPy.git>
+
+
 pip install -r requirements.txt
 
 ### 2. Koriscenje
