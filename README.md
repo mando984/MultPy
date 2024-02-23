@@ -16,7 +16,7 @@
   ·
   <a href="https://github.com/mando984/MultiPy.git" rel="nofollow">Git hub</a>
   ·
-  <a href="/resources/flowchar_multi_py.drawio.pdf" rel="nofollow">Flowchart diagram</a>
+  <a href="/resources/flow_multi_py.drawio.pdf" rel="nofollow">Flowchart diagram</a>
 </p>
 
 
