@@ -94,11 +94,11 @@ def play_one_round():
     for _ in range(MAX_QUESTIONS):
         numbers = get_numbers(questions, question_counter)
         first_number = numbers[0]
-        secund_number = numbers[1]
-        question = f"{first_number} * {secund_number} =" # generates a question view
+        second_number = numbers[1]
+        question = f"{first_number} * {second_number} =" # generates a question view
         apps.frame3.quest_label.config(text=question)  # display question
         apps.frame3.answer_entry.grid(row=0, column=1, sticky="w", padx=10)
-        hint = generate_hint(first_number, secund_number)
+        hint = generate_hint(first_number, second_number)
         apps.frame3.help_label.config(text=hint)  # display hint
         apps.frame3.answer_entry.focus()
         # when user give answer, and press enter
@@ -137,12 +137,12 @@ def process_answer(event):
     global questions
     numbers = get_numbers(questions, question_counter)
     first_number = numbers[0]
-    secund_number = numbers[1]
+    second_number = numbers[1]
 
     answer = validation_answer(
         apps,
         first_number,
-        secund_number)  # return True or False
+        second_number)  # return True or False
     apps.score.answer(answer)  # Forward the check to the Score class.
 
     if answer:
@@ -160,7 +160,7 @@ def process_answer(event):
             text=apps.score.combo, font=(
                 "Helvetica", DEFAULT_TEXT_SIZE))
         apps.frame3.feedback_result_label.config(
-            text=f"Wrong!  {first_number}  *  {secund_number} = {first_number * secund_number} ",
+            text=f"Wrong!  {first_number}  *  {second_number} = {first_number * second_number} ",
             foreground="red")
         apps.frame3.feedback_result_label.after(
             DELAY_WRONG_MESSAGE, hide_mesage)
@@ -173,11 +173,11 @@ def process_answer(event):
 
 
 # Check the user's answer and return true or false."
-def validation_answer(apps, first_number, secund_number):
+def validation_answer(apps, first_number, second_nubmer):
 
     try:
         user_answer = int(apps.frame3.answer_var.get())  # get users answer
-        result = first_number * secund_number
+        result = first_number * second_nubmer
         if result == user_answer:
             return True
         else:
@@ -214,25 +214,25 @@ def generate_quest(current_level):
     first_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     first_numbers = shuffle(first_numbers)
     first_numbers = first_numbers[:5]
-    secund_numbers = get_level_difficulty(
+    second_numbers = get_level_difficulty(
         apps.difficulty, current_level).get_level
-    secund_numbers = shuffle(secund_numbers)
-    secund_numbers = secund_numbers[:5]
+    second_numbers = shuffle(second_numbers)
+    second_numbers = second_numbers[:5]
     pairs = {}  # create dictionary for store all pair numbers
     for i in range(5):
-        pair = [first_numbers[i], secund_numbers[i]]
+        pair = [first_numbers[i], second_numbers[i]]
         pairs[i] = pair
     return pairs
 
 
 # returns string to help_label
-def generate_hint(first_number, secund_number):
+def generate_hint(first_number, second_number):
 
-    if secund_number == 1:  # when multiply with 1, then have single number
+    if second_number == 1:  # when multiply with 1, then have single number
         return f"Hint : {first_number}"
     else:
         # when print hint reduce hint becous one "+" is too much
-        reduct_secund_nubmer = secund_number - 1
+        reduct_secund_nubmer = second_number - 1
 
     help = f"{first_number} + " * reduct_secund_nubmer  # multipy hint
     # add one more number to complite hint

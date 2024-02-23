@@ -3,9 +3,9 @@ from tkinter import ttk
 from ttkbootstrap import*
 
 from gui.main_page import MainPage
-from gui.secund_page import SecondPage
+from gui.second_page import SecondPage
 from gui.third_page import ThirdPage
-from gui.four_page import FourPage
+from gui.fourth_page import FourthPage
 
 from data.score import Score
 
@@ -15,21 +15,18 @@ class Application(tk.Tk):
       
         self._difficulty = ""
         self.title("MultiPy")
-        self.iconbitmap(r'1.ico')
         self.geometry("800x600")
         self.style = Style(theme='solar')
        
         self.start_level_callback = start_level_callback
         self.score = None
     
-       
         # every frame have instance for take and addition value to Aplication atribute
         self.frame1 = MainPage(self.show_frame2)
         self.frame1.pack()
         self.frame2 = SecondPage(self.show_frame3)
         self.frame3 = ThirdPage(self.show_frame4, self.start_level_callback)
-        self.frame4 = FourPage(self.show_frame1)
-        #self.frame3.pack()
+        self.frame4 = FourthPage(self.show_frame1)
 
 
     def show_frame2(self):
@@ -59,7 +56,7 @@ class Application(tk.Tk):
         self.frame1.pack()
         self.frame2 = SecondPage(self.show_frame3)
         self.frame3 = ThirdPage(self.show_frame4, self.start_level_callback)
-        self.frame4 = FourPage(self.show_frame1)
+        self.frame4 = FourthPage(self.show_frame1)
 
 
     # destroy all frame to allow new game
