@@ -15,8 +15,10 @@ class Application(tk.Tk):
       
         self._difficulty = ""
         self.title("MultiPy")
+        self.iconbitmap(r'1.ico')
         self.geometry("800x600")
         self.style = Style(theme='solar')
+       
         self.start_level_callback = start_level_callback
         self.score = None
     
