@@ -15,7 +15,6 @@ class Application(tk.Tk):
       
         self._difficulty = ""
         self.title("MultiPy")
-        self.iconbitmap(r'1.ico')
         self.geometry("800x600")
         self.style = Style(theme='solar')
        
