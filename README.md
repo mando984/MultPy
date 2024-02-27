@@ -78,7 +78,9 @@ If the player's time is less than 75 seconds, they receive a bonus level.
 
 ![Bonus Level](resources/bonus_page_screenshot.png)
 
-When the game finishes, players are directed to the fourth page where their score and time are displayed. On this page, players enter their name in an entry field. Upon submitting their name, the application places the player in a table and ranks them. Finally, players are returned to the main page
+When the game finishes, players are directed to the fourth page where their score and time are displayed. On this page, players enter their name in an entry field. Upon submitting their name, the application places the player in a table and ranks them. Finally, players are returned to the main page.
+
+![Fourth Page](resources/fourth_page_screenshot.png)
 
 
 ### Code Structure
