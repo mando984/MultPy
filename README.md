@@ -63,7 +63,8 @@ Upon starting the game, move to the second page and select the desired difficult
 ![Second Page](resources/second_page_screenshot.png)
 
 
-On the third page, the status of the current level is displayed at the top of the screen. In the middle of the screen, the question, answer, and hint frame are displayed. On the bottom left, the combo is shown. To start the level, click on the 'Start Level' button. Answer the multiplication questions by entering the correct value and pressing the 'Enter' key on the keyboard. Each time the player's answer is correct, the combo increases by 5 and is added to the score. The score is displayed in the bottom right corner. While the level is running, a timer counts down. If the level finishes, the timer stops."
+On the third page, the status of the current level is displayed at the top of the screen. In the middle of the screen, the question, answer, and hint frame are displayed. On the bottom left, the combo is shown. To start the level, click the `Start Level` button. Answer the multiplication questions by entering the correct value and pressing the `Enter` key on the keyboard. Each time the player's answer is correct, the combo (the number of consecutive correct answers given by the player) increases by 5 and is added to the score. The score is displayed in the bottom right corner. During gameplay, a timer counts down as the level progresses. If the level finishes, the timer stops.
+
 
 ![Third Page](resources/third_page_screenshot.png)
 
@@ -85,6 +86,69 @@ When the game finishes, players are directed to the fourth page where their scor
 
 ### Code Structure
 
+<details>
+<summary>Click to expand</summary>
+<pre>
+project/
+|-- __init__.py
+|-- project.py
+|-- test_project.py
+|-- requirements.txt
+|-- README.md
+|
+|-- gui/
+|   |-- __init__.py
+|   |-- application.py
+|   |-- main_page.py
+|   |-- second_page.py
+|   |-- third_page.py
+|   |-- fourth_page.py
+|
+|-- data/
+|   |-- __init__.py
+|   |-- table.py
+|   |-- rangList.csv
+|   |-- easy.py
+|   |-- medium.py
+|   |-- hard.py
+|   |-- score.py
+|
+|-- resources/
+</pre>
+</details>
+
+
+1. **project**/
+
+    **init. py**: Marks the directory as a Python package.
+
+    **project. py**: Main file of the project containing core code and functions to run the project.
+
+    **test_project.py**: Contains tests to verify the correctness of the project's code.
+
+    **requirements.txt**: Lists Python packages and their versions required to execute the project.
+
+    **README. md**: Contains project description, installation instructions, usage guidelines, and other important information.
+
+2. **gui**/
+
+    **init. py**: Marks the directory as a Python package.
+
+    **application. py**: Initializes the application and manages its display.
+
+    **main_page. py**, **second_page. py**, **third_page. py**, **fourth_page. py**: Contains code related to the main screens or pages of the application.
+
+3. **data**/
+
+    **init. py**: Marks the directory as a Python package.
+
+    **table. py**: Contains code for processing or manipulating data tables.
+
+    **rangList. csv**, **easy. py**, **medium. py**, **hard. py**, **score. py**: Contains various data or scripts used in the project, such as ranking data, score calculation scripts, etc.
+
+4. **resources**/
+
+    Contains various project resources such as images, icons, sounds, etc.
 
 ### Code Architecture
 
