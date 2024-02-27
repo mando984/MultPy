@@ -1,16 +1,16 @@
 import csv
 from pathlib import Path
 
-file_path = Path(__file__).parent / "rangList.csv"
+file_path = Path(__file__).parent / "rankList.csv"
 
 def main():
 
-    players = read_rang_list()
+    players = read_rank_list()
     print(players)
     sorted_players = sort_player(players)
-    write_rang_list(sorted_players)
+    write_rank_list(sorted_players)
 
-def read_rang_list():
+def read_rank_list():
     players = []
     with open(file_path) as file:
         reader = csv.DictReader(file)
@@ -24,7 +24,7 @@ def sort_player(players):
     sorted_students = sorted(players, key=lambda student: (student["Score"], -student["Time"], student["Name"]), reverse=True)
     return sorted_students
 
-def write_rang_list(players):
+def write_rank_list(players):
     with open(file_path, "w", newline='') as file:  # Preporučljivo koristiti 'newline='''
         writer = csv.DictWriter(file, fieldnames=["Name", "Score", "Time"])
         writer.writeheader()

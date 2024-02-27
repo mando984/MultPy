@@ -1,6 +1,7 @@
 from data.easy import Easy
 
 class Medium(Easy):
+
     def levels(self, level):
          numbers = []
          match level:
@@ -16,7 +17,7 @@ class Medium(Easy):
                 numbers = [3, 3, 3, 4, 4, 4, 6, 6, 6, 6]
             case 6:
                 numbers = [3, 3, 3, 4, 4, 4, 6, 6, 6, 6]
-
+                
          return numbers
     
    

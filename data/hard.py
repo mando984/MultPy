@@ -1,6 +1,7 @@
 from data.easy import Easy
 
 class Hard(Easy):
+    
     def levels(self, level):
         numbers = []
         match level:

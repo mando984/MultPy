@@ -4,12 +4,13 @@ class Easy():
         self._level = level
         self.numbers = self.levels(self._level)
 
+
     @property
     def get_level(self):
         return self.numbers
     
+    
     def levels(self, level):
-        # Ispravljeno korišćenje match izraza
         numbers = []
         match level:
             case 1:

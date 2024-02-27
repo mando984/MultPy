@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk
 from ttkbootstrap import*
 
-from data.table import read_rang_list
+from data.table import read_rank_list
 
 class MainPage(tk.Frame):
     def __init__(self, next_page_callback):
@@ -16,7 +16,7 @@ class MainPage(tk.Frame):
         self.header_label.pack(pady=20)
 
        
-        self.list_name = ttk.Label(self, text="RangList", font=("Helvetica", 18), foreground="#CA9A07")
+        self.list_name = ttk.Label(self, text="RankList", font=("Helvetica", 18), foreground="#CA9A07")
         self.list_name.pack(pady=10)
 
         #print table
@@ -37,7 +37,7 @@ class MainPage(tk.Frame):
         self.refresh_table()  # ažuriranje tabele
 
         # Set the start_button to move to secund_page
-        self.start_button = ttk.Button(self, text=" Start new game! ",style= "outline", command=self.next_page_callback)
+        self.start_button = ttk.Button(self, text=" Start new game ",style= "outline", command=self.next_page_callback)
         self.start_button.pack(pady=30)
 
         self.quit_button = ttk.Button(self, text="Quit game",  width=20, style= "outline", command=self.quit)
@@ -55,7 +55,7 @@ class MainPage(tk.Frame):
     def refresh_table(self):
         self.tree.delete(*self.tree.get_children())  # clear table
         #self.tree.update_idletasks()
-        players = read_rang_list() 
+        players = read_rank_list() 
         for i, player in enumerate(players, start=1):
             self.tree.insert("", "end", values=(i, player["Name"], player["Score"], player["Time"]))    
         self.tree.pack(pady=10)    

@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-from data.table import read_rang_list, write_rang_list, sort_player
+from data.table import read_rank_list, write_rank_list, sort_player
 
 class FourthPage(tk.Frame):
     def __init__(self, next_page_callback):
@@ -60,11 +60,11 @@ class FourthPage(tk.Frame):
 
     # Add  new player to csv file
     def add_player(self, name):
-        players = read_rang_list()
+        players = read_rank_list()
         new_player = {"Name": name, "Score": int(self.score.score), "Time": int(self.score.time)}
         players.append(new_player)
         sorted_players = sort_player(players)
-        write_rang_list(sorted_players)
+        write_rank_list(sorted_players)
        
 
        
