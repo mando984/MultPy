@@ -57,6 +57,7 @@ The root file is `project.py`.
 When the game starts, the `Main page` is displayed . The main page shows a rank table featuring the best players, as well as buttons for `Start Game` and `Quit Game`.
 
 Main page:
+
 ![Main Page](resources/main_page_screenshot.png)
 
 
@@ -64,29 +65,34 @@ Main page:
 Upon starting the game, move to the `Second Page` and select the desired difficulty level (easy, medium, hard) and press `Next` button.
 
 Second Page:
+
 ![Second Page](resources/second_page_screenshot.png)
 
 
 On the `Third Page`, the status of the current level is displayed at the top of the screen. In the middle of the screen, the question, answer, and hint frame are displayed. On the bottom left, the combo is shown. To start the level, click the `Start Level` button. Answer the multiplication questions by entering the correct value and pressing the `Enter` key on the keyboard. Each time the player's answer is correct, the combo (the number of consecutive correct answers given by the player) increases by 5 and is added to the score. The score is displayed in the bottom right corner. During gameplay, a timer counts down as the level progresses. If the level finishes, the timer stops.
 
 Third Page:
+
 ![Third Page](resources/third_page_screenshot.png)
 
 When the player presses 'Enter' to submit their answer, feedback is displayed below the hint frame. There are two types of feedback: `Correct Answer` and `Wrong! a * b = c`.
 If the answer is wrong, the combo resets to 1.
 
 Third Page 2:
+
 ![Wrong Answer](resources/wrong_answer.png)
 
 
 If the player's time is less than 75 seconds, they receive a `Bonus Level`.
 
 Bonus Level:
+
 ![Bonus Level](resources/bonus_page_screenshot.png)
 
 When the game finishes, players are directed to the `Fourth Page` where their score and time are displayed. On this page, players enter their name in an entry field. Upon submitting their name, the application places the player in a table and ranks them. Finally, players are returned to the main page.
 
 Fourth Page:
+
 ![Fourth Page](resources/fourth_page_screenshot.png)
 
 
