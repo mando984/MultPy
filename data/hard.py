@@ -1,6 +1,10 @@
 from data.easy import Easy
 
+""" Class Hard hold 5 list of numbers.
+ In project.py, def get_level_difficulty() use thise data."""
+
 class Hard(Easy):
+    
     
     def levels(self, level):
         numbers = []

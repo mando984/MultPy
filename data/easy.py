@@ -1,4 +1,8 @@
+""" Class Easy hold 5 list of numbers.
+ In project.py, def get_level_difficulty() use thise data."""
+
 class Easy():
+
 
     def __init__(self, level = 1):
         self._level = level

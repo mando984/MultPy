@@ -3,15 +3,6 @@ import tkinter as tk
 from tkinter import ttk
 from ttkbootstrap import*
 
-# U application.py
-import sys
-from pathlib import Path
-
-# Dodajte glavni direktorij u PYTHONPATH
-glavni_direktorij = Path(__file__).resolve().parents[1]
-sys.path.append(str(glavni_direktorij))
-
-
 from data.table import read_rank_list
 
 class MainPage(tk.Frame):
@@ -49,7 +40,7 @@ class MainPage(tk.Frame):
         self.start_button = ttk.Button(self, text=" Start new game ",style= "outline", command=self.next_page_callback)
         self.start_button.pack(pady=30)
 
-        self.quit_button = ttk.Button(self, text="Quit game",  width=20, style= "outline", command=self.quit)
+        self.quit_button = ttk.Button(self, text="Quit game",  width=14, style= "outline", command=self.quit)
         self.quit_button.pack(pady=10)
 
         #  every show frame1 call on_show mhetod 
