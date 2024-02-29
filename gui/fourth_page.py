@@ -1,13 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-# U application.py
-import sys
-from pathlib import Path
-
-# Dodajte glavni direktorij u PYTHONPATH
-glavni_direktorij = Path(__file__).resolve().parents[1]
-sys.path.append(str(glavni_direktorij))
-
 
 from data.table import read_rank_list, write_rank_list, sort_player
 
@@ -15,13 +7,14 @@ class FourthPage(tk.Frame):
     def __init__(self, next_page_callback):
         super().__init__()
         
+
         self.next_page_callback = next_page_callback
         #self.score_instance = score_instance
         #self.show_frame_callback = show_frame_callback
         
-        
-        self.header_label = ttk.Label(self, text="Multiply Mastery", font=("Helvetica", 30), foreground="#CA9A07")
-        self.header_label .pack(pady=20)
+        # displays application name on header
+        self.header_label = ttk.Label(self, text="MultiPy", font=("Helvetica", 30), foreground="#CA9A07")
+        self.header_label.pack(pady=20)
 
         # Display users score
         self.total_score_label = ttk.Label(self, text="", font=("Helvetica", 20), foreground="#CA9A07")
@@ -65,6 +58,7 @@ class FourthPage(tk.Frame):
         if name == "":
             name = "Player"
         return name.capitalize()     
+
 
     # Add  new player to csv file
     def add_player(self, name):

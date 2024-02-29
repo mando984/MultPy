@@ -37,7 +37,6 @@
    """
 
 
-
 from gui.application import Application
 from data.easy import Easy
 from data.medium import Medium
@@ -46,9 +45,7 @@ from data.hard import Hard
 from ttkbootstrap import Style
 import tkinter as tk
 
-import random
-import time
-import math
+import random, time, math
 
 
 MAX_QUESTIONS = 5

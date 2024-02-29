@@ -2,16 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 from ttkbootstrap import*
 
-
-# U application.py
-import sys
-from pathlib import Path
-
-# Dodajte glavni direktorij u PYTHONPATH
-glavni_direktorij = Path(__file__).resolve().parents[1]
-sys.path.append(str(glavni_direktorij))
-
-
 from gui.main_page import MainPage
 from gui.second_page import SecondPage
 from gui.third_page import ThirdPage
@@ -27,7 +17,7 @@ class Application(tk.Tk):
         self.title("MultiPy")
         self.geometry("800x600")
         self.style = Style(theme='solar')
-        #self.iconbitmap("resources\MultiPy.ico.ico")
+       
         self.start_level_callback = start_level_callback
         self.score = None
     
@@ -105,3 +95,11 @@ class Application(tk.Tk):
     def start_application(self):
         self.mainloop()    
 
+
+def main():
+    apps = Application()
+    apps.start_application()
+
+
+if __name__ == "__main__":
+    main()
