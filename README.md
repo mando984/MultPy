@@ -12,6 +12,8 @@
   <br>
   <a href="">Youtube video</a>
   ·
+   <a href="https://mega.nz/file/7gRQ2IqQ#inkxNgmS1fo261jmxH05VmPneCEfC4FeriobVHjly4g">Windows application</a>
+  · 
   <a href="requirements.txt">Request feature</a>
   ·
   <a href="https://github.com/mando984/MultiPy.git" rel="nofollow">Git hub</a>

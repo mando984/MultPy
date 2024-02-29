@@ -3,6 +3,15 @@ import tkinter as tk
 from tkinter import ttk
 from ttkbootstrap import*
 
+# U application.py
+import sys
+from pathlib import Path
+
+# Dodajte glavni direktorij u PYTHONPATH
+glavni_direktorij = Path(__file__).resolve().parents[1]
+sys.path.append(str(glavni_direktorij))
+
+
 from data.table import read_rank_list
 
 class MainPage(tk.Frame):

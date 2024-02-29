@@ -37,6 +37,7 @@
    """
 
 
+
 from gui.application import Application
 from data.easy import Easy
 from data.medium import Medium
