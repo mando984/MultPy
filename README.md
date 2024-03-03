@@ -22,7 +22,7 @@
 </p>
 
 
-### Table of content
+## Table of content
 * [Description](#description)
 * [System Prerequisites](#system-prerequisites)
 * [Installantion](#installation)
@@ -30,16 +30,17 @@
 * [Code Structure](#code-structure)
 * [Code Architecture](#code-architecture)
 * [Packing the Application into an Executable (.exe) File](#pack-windows-exe)
+* [Contact information](#contact-information)
 
 
-### Description 
+## Description 
 ***
 *MultiPy* is an interactive game designed for learning multiplication up to 10. The game consists of five levels, each with five questions, and offers three difficulty levels. It generates random questions, tracks player scores, and ranks them on a leaderboard at the end of the game. 
 It's implemented in Python, using Tkinter and ttkbootstrap for the graphical user interface.
 The main challenge was implementing Tkinter using an object-oriented approach, following the MVC concept. 
 The next upgrade will include adding sound effects, expanding the game to include division operations, and possibly addition and subtraction as well.
 
-### System Prerequisites
+## System Prerequisites
 ***
 Before using the application, make sure you have the following prerequisites installed on your system:
 
@@ -54,7 +55,7 @@ Windows 10 or later.
 
 These prerequisites are necessary for the proper functioning of the application. If you encounter any issues during installation or usage, please ensure that these prerequisites are met.
 
-### Installation
+## Installation
 ***
 #### For IDE Usage :
 
@@ -101,7 +102,7 @@ These prerequisites are necessary for the proper functioning of the application.
 These steps will guide you through the process of installing and running the application, whether you are using an IDE or running the Windows application directly. If you encounter any issues during installation or usage, feel free to reach out for assistance.
 
 
-### Gameplay
+## Gameplay
 ***
 When the game starts, the `Main page` is displayed . The main page shows a rank table featuring the best players, as well as buttons for `Start Game` and `Quit Game`.
 
@@ -145,7 +146,7 @@ Fourth Page:
 ![Fourth Page](resources/fourth_page_screenshot.png)
 
 
-### Code Structure
+## Code Structure
 ***
 
 
@@ -214,15 +215,13 @@ project/
 </details>
 
 
-### Code Architecture
+## Code Architecture
 ***
 
 The application architecture follows the MVC pattern. The data directory is used for the model. The gui directory is used for the view. The controller is project. py. The controller is supported by application. py, located in the gui directory. The Application class is responsible for managing windows.
 
 
 application. py:
-
-
 ```python
 
 class Application(Tk.tk):
@@ -254,10 +253,9 @@ class Application(Tk.tk):
 
 ```
 
-The entire game logic is housed in project.py. In project.py, an instance of Application is created.
+The entire game logic is housed in project. py. In project.py, from where Applications are instantiated.
 
 project.py:
-
 ```python
 
 def main():
@@ -283,7 +281,7 @@ def update_label_text():
 
     ...
 ```
-Further program flow occurs using the tkinter graphical interface. When the user interacts with the GUI and clicks the "Start new game" button in main_page.py, it transitions to the next window.
+Further program flow occurs using the tkinter graphical interface. When the user interacts with the GUI and clicks the `Start new game` button in main_page.py, it transitions to the next window.
 
 application. py:
 
@@ -292,14 +290,14 @@ application. py:
 self.frame2 = SecondPage(self.show_frame3)
 ```
 
-In second_page.py, the difficulty level is chosen and stored in the Application class. Then it transitions to third_page.py from application. py.
+In second_page.py, the `difficulty level` is chosen and stored in the Application class. Then it transitions to third_page.py from application. py.
 
 ```python
 
 self.frame3 = ThirdPage(self.show_frame4, self.start_level_callback)
 ```
 
-The game takes place there. When the user clicks the "Start level" button, it triggers in project.py:
+The game takes place there. When the user clicks the `Start level` button, it triggers in project. py:
 
 ```python
 
@@ -327,7 +325,7 @@ This function updates the level, manages the current level, ends the game, or tr
 
 
 
-### Packing the Application into an Executable (.exe) File
+## Packing the Application into an Executable (.exe) File
 ***
 Before packing an executable application, ensure that you have the necessary system requirements for building apps. The first step is to install PyInstaller using the command 
 
@@ -351,11 +349,12 @@ The `--onedir` option ensures that all files are organized within a single direc
 
 
 
-### Contact information:
+## Contact information:
 Email: [mando984@gmail.com](mando984@gmail.com)
 
 LinkedIn: [Dalibor Mandic](https://www.linkedin.com/in/dalibor-mandic-006165261?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
 Instagram: [@mandicd84](https://www.instagram.com/mandicd84/?igsh=YzljYTk1ODg3Zg%3D%3D)
 
-Discord: [dalibor7374](discordapp.com/users/80248221580761498)
+Discord: [dalibor7374](discordapp.com/users/802482215807614988)
+
