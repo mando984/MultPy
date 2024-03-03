@@ -353,6 +353,9 @@ The `--onedir` option ensures that all files are organized within a single direc
 
 ### Contact information:
 Email: [mando984@gmail.com](mando984@gmail.com)
+
 LinkedIn: [Dalibor Mandic](https://www.linkedin.com/in/dalibor-mandic-006165261?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+
 Instagram: [@mandicd84](https://www.instagram.com/mandicd84/?igsh=YzljYTk1ODg3Zg%3D%3D)
+
 Discord: [dalibor7374](discordapp.com/users/80248221580761498)
