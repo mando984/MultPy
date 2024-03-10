@@ -72,7 +72,7 @@ These prerequisites are necessary for the proper functioning of the application.
   Clone or download this repository to your local machine. You can do this by clicking on the "Code" button and selecting "Download ZIP", or by using git to clone the repository:
 
   ```
-  git clone [repository_url](https://github.com/mando984/MultiPy)
+  git clone <https://github.com/mando984/MultiPy>
   ```
 
   3.**Navigate to Project Directory**:
