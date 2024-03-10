@@ -1,7 +1,12 @@
+"""
+Score keep player result and combo.Instance in class Application, 
+Update in project.py def proces_answer()
+"""
+
 import math
+
+
 class Score:
-
-
     def __init__(self, difficulty):
 
         # Saves the values that are multiplied by the current combo when the answer is correct.

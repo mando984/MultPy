@@ -1,3 +1,7 @@
+"""
+On my page, display the table, start, or quit the game.
+"""
+
 
 import tkinter as tk
 from tkinter import ttk
@@ -33,8 +37,8 @@ class MainPage(tk.Frame):
         self.tree.heading("Score", text="Score", anchor=tk.W)
         self.tree.heading("Time", text="Time", anchor=tk.W)
 
-        # Postavi podatke u Treeview
-        self.refresh_table()  # ažuriranje tabele
+        # Set the data in the Treeview
+        self.refresh_table()  # Updating the table
 
         # Set the start_button to move to secund_page
         self.start_button = ttk.Button(self, text=" Start new game ",style= "outline", command=self.next_page_callback)
@@ -51,7 +55,7 @@ class MainPage(tk.Frame):
        # widget.update_idletasks()    
  
 
-       # ažuriranje tabele
+       # Updating the table
     def refresh_table(self):
         self.tree.delete(*self.tree.get_children())  # clear table
         #self.tree.update_idletasks()

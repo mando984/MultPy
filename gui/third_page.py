@@ -1,3 +1,7 @@
+"""
+Here, play the game. There are several connections with project.py.
+"""
+
 import tkinter as tk
 from tkinter import ttk
 

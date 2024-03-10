@@ -1,3 +1,9 @@
+"""
+Applications are the controllers for manipulating pages.
+The application instance's score after the second page has been completed.
+
+"""
+
 import tkinter as tk 
 from tkinter import ttk
 from ttkbootstrap import*
@@ -8,6 +14,7 @@ from gui.third_page import ThirdPage
 from gui.fourth_page import FourthPage
 
 from data.score import Score
+
 
 class Application(tk.Tk):
     def __init__(self, start_level_callback):

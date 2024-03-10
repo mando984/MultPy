@@ -1,3 +1,7 @@
+"""
+table.py update, write and read csv file
+"""
+
 import csv
 from pathlib import Path
 

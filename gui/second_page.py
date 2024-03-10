@@ -1,6 +1,9 @@
+"""
+On the second page, select the difficulty level and return the value to the Application.
+"""
+
 import tkinter as tk
 from tkinter import ttk
-
 
 
 class SecondPage(tk.Frame):

@@ -3,14 +3,12 @@ from tkinter import ttk
 
 from data.table import read_rank_list, write_rank_list, sort_player
 
+
 class FourthPage(tk.Frame):
     def __init__(self, next_page_callback):
         super().__init__()
         
-
         self.next_page_callback = next_page_callback
-        #self.score_instance = score_instance
-        #self.show_frame_callback = show_frame_callback
         
         # displays application name on header
         self.header_label = ttk.Label(self, text="MultiPy", font=("Helvetica", 30), foreground="#CA9A07")
