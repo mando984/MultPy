@@ -1,3 +1,5 @@
 
 pip install tk
 pip install ttkbootstrap
+pip install -U pytest
+pip install unittest

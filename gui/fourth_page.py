@@ -1,3 +1,10 @@
+import sys
+from pathlib import Path
+
+# Add the main directory to PYTHONPATH.
+main_directory = Path(__file__).resolve().parents[1]
+sys.path.append(str(main_directory))
+
 import tkinter as tk
 from tkinter import ttk
 

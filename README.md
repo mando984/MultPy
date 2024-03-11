@@ -29,6 +29,7 @@
 * [Gameplay](#gameplay)
 * [Code Structure](#code-structure)
 * [Code Architecture](#code-architecture)
+* [Testing](#testing)
 * [Packing the Application into an Executable (.exe) File](#pack-windows-exe)
 * [Contact information](#contact-information)
 
@@ -322,6 +323,33 @@ def update_label_text():
     ...
 ```
 This function updates the level, manages the current level, ends the game, or triggers a bonus level if conditions are met. Finally, it moves to the next page. Fourth page ensures that the user enters their name, their score is recorded in the table, and they return to the main page. A graphical representation of the sequential diagram is shown in the UML diagram at the top of the page.
+
+
+## Testing
+***
+Before testing, you must install pytest and unittest.
+
+```
+    pip install -U pytest
+    pip install unittest
+```
+More info about pytest on :                  
+[pytest documentation](https://docs.pytest.org/en/8.0.x/contents.html)
+
+Because the application structure is separated into several directories and I use relative paths in the code, it becomes difficult to import every part into the test. You must add system paths.
+
+It is necessary to include the absolute path of the root directory in the system's path.
+<sys.path.append(absolute path of root directory).>
+
+```
+import sys
+sys.path.append('C:/Users/mando/OneDrive/Documents/MuliPy')
+```
+"When using unittest, you can run a Python script and test directly through unit tests with the following code:
+```
+    if __name__ == '__main__':
+         unittest.main()
+```
 
 
 

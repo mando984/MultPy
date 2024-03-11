@@ -1,3 +1,11 @@
+"""
+To make the test script work, it is necessary to enter the absolute path of the root directory into the system's path.
+    <sys.path.append(absolute path of root directory).>
+"""
+
+import sys
+sys.path.append('C:/Users/mando/OneDrive/Documents/MuliPy')
+
 from project import get_level_difficulty, generate_hint, get_numbers, validation_answer, apps, start_level
 import unittest
 from unittest.mock import MagicMock
@@ -93,10 +101,4 @@ def test_get_number_multi_pair():
 
 
 if __name__ == '__main__':
-    test_get_level_difficulty_easy()
-    test_get_level_difficulty_medium()
-    test_get_level_difficulty_hard()
-    test_generate_hint_multiple_numbers()
-    test_generate_hint_single_number()
-    test_get_numbers()
-    test_get_number_multi_pair()
+    unittest.main()

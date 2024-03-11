@@ -4,6 +4,13 @@ The application instance's score after the second page has been completed.
 
 """
 
+import sys
+from pathlib import Path
+
+# Add the main directory to PYTHONPATH.
+main_directory = Path(__file__).resolve().parents[1]
+sys.path.append(str(main_directory))
+
 import tkinter as tk 
 from tkinter import ttk
 from ttkbootstrap import*
@@ -102,11 +109,3 @@ class Application(tk.Tk):
     def start_application(self):
         self.mainloop()    
 
-
-def main():
-    apps = Application()
-    apps.start_application()
-
-
-if __name__ == "__main__":
-    main()
