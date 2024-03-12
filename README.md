@@ -10,7 +10,7 @@
   Simple, intuitive, and educational mathematic game intended for kids.
   <br>
   <br>
-  <a href="https://www.youtube.com/watch?v=7lJV5_z0exM">Youtube Video demo</a>
+  <a href="https://youtu.be/sSsaNYY0HCQ">Youtube Video demo</a>
   ·
   <a href="requirements.txt">Request feature</a>
   ·
